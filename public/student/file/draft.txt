@@ -1,0 +1,22 @@
+Title: Cross Platform Mobile Application Development Frameworks: Compare the Use of React Native and  Apache Cordova/PhoneGap
+
+Main objective: Compare the use of React Native and Apache Cordova to find out their usage in cross platform mobile application development 
+
+Sub objective:
+1. What is the use of making cross platform Application.
+Type: Exploratory , because here some survey result or evaluation of cross platform application is needed to show to gather preliminary information.   
+
+2.Describe the benefit of using frameworks in developing a cross platform mobile application?        
+Type: Descriptive, just an initial understanding of their importance. 
+
+3. Which framework(React Native/PhoneGap is popular in market and who are using them in present situation? 
+Type: Exploratory , because here framework's popularity result and survey data from the interret is needed to observe their current situation
+
+4.Differentiate React Native framework's usage benefits with PhoneGap. 
+Type: Exploratory, All the present situation/recent data needs to be gathered regarding React Native's pros and cons.
+
+5.Differentiate PhoneGap framework's usage benefits with React Native framework.
+Type: Exploratory, All the present situation/recent data needs to be gathered regarding PhoneGap's pros and cons.
+
+6.Summarize these two framework's advantages or usage in different kinds of cross platform mobile application development.  
+Type: Corelational, because it compares the effectiveness of these two frameworks on cross platform mobile application developement

@@ -1,0 +1,37 @@
+Review Articles (Literature Reviews) are of various types:
+1- Traditional Review
+2- Systematic Review
+3- Meta-Analysis.
+all of these are written by Reviewing already published papers - this process is known is literature review.
+However, research papers like Clinical Trials and Observational studies or any article type will have some component of literature review. Because you have to look at the already published papers and mention them in your paper to tell the reader about what is already done in this field.
+So essentially, all research articles have previous studies added in the article. To add these previous studies, you have to read previous literature- this process is known as literature review. Now you add this reviewed literature in your paper after CRITICALLY REVIEWING them.
+Now, the other part of your question.
+What is critical review- it can also be a type of traditional review where you critically analyse previous studies.
+
+
+Example:
+Title-Mobile cloud computing and mobile battery augmentation
+
+Suganya & Kannan(2018) they mainly highlights about cloud computing.
+nowadays mobile storage is importent things.
+they talking about how it's elasticity,scalability feature can increase.
+they also working in this topic.
+they also suggest some feature such as scalability,dynamic resource,allocation and quick provising that make cloud compution best.
+but they didn't talked about mobile bettery lifetime.
+they could not prove any methods for extened cloud computing storage.they just explained this topic on their research.
+
+
+
+Jagtap,ajeet et al.(2014) they researched about processing power,battery backup and bandwidth.
+they suggested some high processing power cloud and how to increase mobile storage.they not only described about problem but also gave some solutions about how to increase storage memory by cloud computing.
+they gave idea for used offloded,migration gradually.they hilights the the solution of cloud computing by used offloading methods.
+but they didn't talked about mobile battery augmentation briefly.they just ignored that topic somehow.
+
+
+
+REFERENCES:
+
+1.V. Suganya,dr. M. Kannan(2018).A survay of advantage research in compiter science.
+Review on compute augmentation techniques in mobile cloude computing.doi:http://dx.doi.org/10.26483/ijarcs.v9i2.5767
+
+2.K. Pawar,V. Jagtap,M. Bedekar(2014).Afmeaci:A framework for mobile execution augmentation using cloud infrastructure.
