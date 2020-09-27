@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 13, 2020 at 10:36 AM
+-- Generation Time: Sep 26, 2020 at 05:53 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -58,7 +58,46 @@ INSERT INTO `assignment` (`assignment_id`, `filename`, `directory`, `date`, `due
 (8002, 'English Assignment', 'Lab_EXam (1).pdf', '2020-08-12', '2020-08-12', 8, 1, 82),
 (8003, 'app.js', 'upload/assignment', '2020-09-06', '2021-01-01', 1, 1, 1),
 (8004, 'credentials.txt', 'upload/assignment', '2020-09-06', '2020-09-08', 1, 2, 1),
-(8005, 'Procfile', 'upload/assignment', '2020-09-07', '2020-09-08', 2, 2, 2);
+(8005, 'Procfile', 'upload/assignment', '2020-09-07', '2020-09-08', 2, 2, 2),
+(8006, 'messages.sql', 'upload/assignment', '2020-09-22', '2020-09-23', 2, 1, 1),
+(8006, 'Procfile', 'upload/assignment', '2020-09-25', '2020-09-27', 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chats`
+--
+
+CREATE TABLE `chats` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `chats`
+--
+
+INSERT INTO `chats` (`id`, `user_id`, `text`) VALUES
+(1, '20-8102-03', 'hi'),
+(2, '20-8101-03', 'Hello'),
+(3, '20-8101-03', 'how ar u?'),
+(4, '20-8102-03', 'I\'m fine, u?'),
+(5, '20-8101-03', 'also fine'),
+(6, '20-8102-03', 'did u complete ur BSc.?'),
+(7, '20-8101-03', 'nope'),
+(8, '20-8102-03', 'how many sem left?'),
+(9, '20-8101-03', 'one'),
+(10, '20-8101-03', 'hi !!'),
+(11, '20-8102-03', 'hello!'),
+(12, '20-8101-03', 'How r u?'),
+(13, '20-8102-03', 'fine and u?'),
+(14, '20-8559-03', 'fine too!'),
+(15, '20-8102-03', 'grp number?'),
+(16, '20-8559-03', '5'),
+(17, '20-8744-03', 'hi'),
+(18, '20-8744-03', 'hello'),
+(19, '20-8102-03', 'hi there');
 
 -- --------------------------------------------------------
 
@@ -160,7 +199,7 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`id`, `user_id`, `userpassword`, `usertype`) VALUES
 (1, '20-8101-04', 'Student-902', 'student'),
 (3, '20-0000-01', 'Raiyan123@#', 'superadmin'),
-(5, '20-8101-03', 'Teacher-902', 'teacher'),
+(5, '20-8101-03', 'Teacher-902', 'adminTeacher'),
 (6, '20-8102-03', 'Teacher-902', 'teacher'),
 (7, '20-8103-03', 'Teacher-902', 'teacher'),
 (8, '20-8104-03', 'Teacher-902', 'teacher'),
@@ -174,7 +213,25 @@ INSERT INTO `login` (`id`, `user_id`, `userpassword`, `usertype`) VALUES
 (17, '20-0001-02', '', 'schooladmin'),
 (19, '20-0002-02', 'Schooladmin-902', 'schooladmin'),
 (20, '20-0003-02', 'Schooladmin-92', 'schooladmin'),
-(21, '20-0004-02', 'Raiyan123@#', 'schooladmin');
+(21, '20-0004-02', 'Raiyan123@#', 'schooladmin'),
+(23, '20-8355-03', '20-8355-03', 'teacher'),
+(24, '20-8060-03', '20-8060-03', 'teacher'),
+(25, '20-8728-03', 'teacher$8728', 'teacher'),
+(26, '20-8063-03', 'teacher#8063', 'teacher'),
+(27, '20-8502-03', 'teacher#8502', 'teacher'),
+(28, '20-8221-03', 'teacher#8221', 'teacher'),
+(29, '20-8902-03', 'teacher#8902', 'teacher'),
+(30, '20-8906-03', 'teacher#8906', 'teacher'),
+(31, '20-8888-03', 'teacher#8888', 'teacher'),
+(32, '20-8416-03', 'teacher#8416', 'teacher'),
+(33, '20-8004-03', 'teacher#8004', 'teacher'),
+(34, '20-8585-03', 'teacher#8585', 'teacher'),
+(35, '20-8559-03', 'teacher#8559', 'teacher'),
+(36, '20-8334-03', 'teacher#8334', 'teacher'),
+(37, '20-8524-03', 'teacher#8524', 'teacher'),
+(38, '20-8744-03', 'teacher#8744', 'teacher'),
+(39, '20-8748-03', 'teacher#8748', 'teacher'),
+(40, '20-8854-03', 'teacher#8854', 'teacher');
 
 -- --------------------------------------------------------
 
@@ -224,6 +281,25 @@ INSERT INTO `messages` (`id`, `title`, `recipient`, `message`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(4, '2020_09_17_105029_create_chats_table', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `note`
 --
 
@@ -247,7 +323,8 @@ INSERT INTO `note` (`note_id`, `filename`, `directory`, `date`, `subject_id`, `s
 (803, 'app.js', 'upload/note', '2020-09-06', 1, 1, 1),
 (804, 'sms.sql', 'upload/note', '2020-09-06', 1, 1, 1),
 (805, 'credentials.txt', 'upload/note', '2020-09-07', 1, 1, 2),
-(806, 'Procfile', 'upload/note', '2020-09-07', 2, 2, 2);
+(806, 'Procfile', 'upload/note', '2020-09-07', 2, 2, 2),
+(807, 'sms(V3.0).sql', 'upload/note', '2020-09-22', 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -272,7 +349,9 @@ INSERT INTO `notice` (`notice_id`, `noticedate`, `class_id`, `subject_id`, `sect
 (10, '2020-08-10 00:00:00', 8, 81, 1, 'Today\'s class cancel.'),
 (10, '2020-08-11 00:00:00', 8, 86, 1, 'Class test in 20th August'),
 (10, '2020-08-05 00:00:00', 8, 85, 1, 'Submit your assignment before 15th august'),
-(11, '2020-09-05 00:00:00', 2, 2, 2, 'Assignment has been uploaded');
+(11, '2020-09-05 00:00:00', 2, 2, 2, 'Assignment has been uploaded'),
+(12, '2020-09-14 00:00:00', 2, 1, 1, 'assesment on sunday'),
+(13, '2020-09-14 00:00:00', 8, 2, 2, 'assesment on tuesday');
 
 -- --------------------------------------------------------
 
@@ -335,7 +414,7 @@ CREATE TABLE `result` (
 --
 
 INSERT INTO `result` (`result_id`, `class_id`, `section_id`, `attendance`, `midmarks`, `finalmarks`, `total`, `subject_id`, `student_id`) VALUES
-(8801, 8, 1, 30, 75, 80, 185, 83, '20-8101-04'),
+(8801, 8, 1, 70, 80, 80, 190, 83, '20-8101-04'),
 (8802, 8, 1, 50, 60, 60, 120, 89, '20-8102-04'),
 (8803, 8, 2, 60, 50, 6, 110, 90, '20-8102-04'),
 (8804, 1, 1, 60, 45, 45, 90, 1, '20-8101-04');
@@ -663,7 +742,34 @@ INSERT INTO `teacher` (`id`, `teacher_id`, `teachername`, `teacheremail`, `teach
 (7, '20-8107-03', 'Mr. Teacher ICT', 'teacherICT@gmail.com', 'Lecturer', 'ICT', '98/2,Dhanmondi. 32 Dhaka-1209', '5/2/1986', 'Male', 'Muslim', '2010-01-01', 'Mr. Islam', 'Mrs. Islam', 87),
 (8, '20-8108-03', 'Mr. Teacher World Knowledge', 'teacherWK@gmail.com', 'Lecturer', 'World Knowledge', '98/2,Dhanmondi. 32 Dhaka-1209', '5/2/1986', 'Male', 'Muslim', '2010-01-01', 'Mr. Khan', 'Mrs. Khan', 88),
 (9, '20-8109-03', 'Teacher Home Economics', 'teacherHE@gmail.com', 'Lecturer', 'Home Economics', '98/2,Dhanmondi. 32 Dhaka-1209', '5/2/1986', 'Female', 'Muslim', '2010-01-01', 'Mr. Rahman', 'Mrs. Rahman', 89),
-(10, '20-8100-03', 'Mr. Teacher Agriculture', 'teacherA@gmail.com', 'Lecturer', 'Agriculture', '98/2,Dhanmondi. 32 Dhaka-1209', '5/2/1986', 'Male', 'Muslim', '2010-01-01', 'Mr. Alam', 'Mrs. Alam', 80);
+(10, '20-8100-03', 'Mr. Teacher Agriculture', 'teacherA@gmail.com', 'Lecturer', 'Agriculture', '98/2,Dhanmondi. 32 Dhaka-1209', '5/2/1986', 'Male', 'Muslim', '2010-01-01', 'Mr. Alam', 'Mrs. Alam', 80),
+(11, '20-8395-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-24', 'nil', 'nil', 0),
+(12, '20-8963-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-24', 'nil', 'nil', 0),
+(13, '20-8657-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-24', 'nil', 'nil', 0),
+(14, '20-8882-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-24', 'nil', 'nil', 0),
+(15, '20-8195-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-24', 'nil', 'nil', 0),
+(16, '20-8406-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-24', 'nil', 'nil', 0),
+(17, '20-8926-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-24', 'nil', 'nil', 0),
+(18, '20-8236-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(19, '20-8355-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(20, '20-8060-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(21, '20-8728-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(22, '20-8063-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(23, '20-8502-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(24, '20-8221-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(25, '20-8902-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(26, '20-8906-03', 'Md. Shariful Islam', 'hossainsharif058@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(27, '20-8481-03', 'Md. Shariful Islam', 'hossainsharif058@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(28, '20-8888-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(29, '20-8416-03', 'Md. Shariful Islam', 'hossainsharif058@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(30, '20-8004-03', 'Md.Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(31, '20-8585-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-25', 'nil', 'nil', 0),
+(32, '20-8559-03', 'Md. Shariful Islam', 'hossainsharif058@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-26', 'nil', 'nil', 0),
+(33, '20-8334-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-26', 'nil', 'nil', 0),
+(34, '20-8524-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-26', 'nil', 'nil', 0),
+(35, '20-8744-03', 'Md.Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-26', 'nil', 'nil', 0),
+(36, '20-8748-03', 'Md. Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-26', 'nil', 'nil', 0),
+(37, '20-8854-03', 'Md.Shariful Islam', 'imdshariful171@gmail.com', 'teacher', 'nil', 'nil', 'nil', 'nil', 'nil', '2020-09-26', 'nil', 'nil', 0);
 
 -- --------------------------------------------------------
 
@@ -702,7 +808,7 @@ CREATE TABLE `upload` (
   `assignment_id` int(20) NOT NULL,
   `uploadfilename` varchar(50) NOT NULL,
   `uploaddate` varchar(50) NOT NULL,
-  `student_id` int(20) NOT NULL
+  `student_id` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -710,12 +816,20 @@ CREATE TABLE `upload` (
 --
 
 INSERT INTO `upload` (`upload_id`, `assignment_id`, `uploadfilename`, `uploaddate`, `student_id`) VALUES
-(1, 8002, '2dfe9cc400d3d74b6ca254230b9d71af.png', '2020-08-18 20:48:45', 20),
-(2, 8001, '1783da03d8e21ca6ebc26b42a7450f4c.jpg', '2020-08-19 02:02:09', 20);
+(1, 8002, '2dfe9cc400d3d74b6ca254230b9d71af.png', '2020-08-18 20:48:45', '20'),
+(2, 8001, '1783da03d8e21ca6ebc26b42a7450f4c.jpg', '2020-08-19 02:02:09', '20'),
+(3, 8002, 'credentials.txt', '2020-09-26 15:51:41', '20-8101-04'),
+(4, 8001, 'credentials.txt', '2020-09-26 15:52:28', '20-8101-04');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `chats`
+--
+ALTER TABLE `chats`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `event`
@@ -733,6 +847,12 @@ ALTER TABLE `login`
 -- Indexes for table `messages`
 --
 ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -806,6 +926,12 @@ ALTER TABLE `upload`
 --
 
 --
+-- AUTO_INCREMENT for table `chats`
+--
+ALTER TABLE `chats`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
@@ -815,13 +941,19 @@ ALTER TABLE `event`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `noticeboard`
@@ -875,7 +1007,7 @@ ALTER TABLE `superadmin`
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `teacherr`
@@ -887,7 +1019,7 @@ ALTER TABLE `teacherr`
 -- AUTO_INCREMENT for table `upload`
 --
 ALTER TABLE `upload`
-  MODIFY `upload_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `upload_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
