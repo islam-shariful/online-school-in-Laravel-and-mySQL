@@ -69,8 +69,9 @@ class LoginController extends Controller
         $request->session()->put('name', $superadmin[0]->superadminname);
         return redirect()->route('superadmin.index');
       }
-      elseif($userInfo[0]->usertype == 'admin'){
-        return view('#');
+      elseif($userInfo[0]->usertype == 'schooladmin'){
+        //echo $userInfo[0]->usertype;
+        return redirect('home');
       }
       else{
         return 'wrong username/pass';
